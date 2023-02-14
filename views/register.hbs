@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>register</title>
+     <style>
+        .class1{
+            padding: 50px;
+            margin-left: 175px;
+        }
+        .right1{
+            margin-top: 20px;
+            margin-left: 200px;
+            width: 30%;
+            border: 3px ;
+            padding: 90px;
+            border-radius: 15px;
+            background-color:#ffd6ff;
+        }
+     </style>
+</head>
+<body style="background-color:#c8b6ff">
+    <div class="class1">
+        <form action="/auth1/login" method="post">
+            <div class="right1" style="float:left;margin-right:50px">
+                <div>
+                    <label for="email" style="color:black;">Email</label><br><br>
+                <input type="email" name="email" id="email" style="border-radius: 20px;"><br><br>
+                </div>
+                <div>
+                    <label for="password" style="color:black;">Password</label><br><br>
+                <input type="password" name="password" id="password" style="border-radius: 20px;"><br><br>
+                </div>
+                <div>
+                    <label for="confirm_password" style="color:black;">Confirm-Password</label><br><br>
+                <input type="password" name="confirm_password" id="password" style="border-radius: 20px;"><br><br>
+                </div>
+                <div>
+                    <label for="phonenumber" style="color:black;">Phone-Number</label><br><br>
+                <input type="number" name="phonenumber" id="phonenumber" style="border-radius: 20px;"><br><br>
+                </div>
+                {{#if msg}}
+                 <p style="color:red">{{msg}}</p>
+                {{/if}}
+                <p><button type="submit" style="background-color: black;color:antiquewhite;margin-left: 125px">
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>     
+</body>

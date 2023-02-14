@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ticket Booking</title>
+    <style>
+        .right{
+            padding:80px;
+            width:35%;
+            background-color: #ffd6ff;
+            padding-top: 50px;
+            margin-right: 30px;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+<body style="background-color:#c8b6ff">
+    <div class="right">
+        <form action="/pay" method="post">
+                    <h2>Book your Ticket</h2>
+        {{#if from}}
+        <h4>From : {{from}}</h4>
+        {{/if}}
+        {{#if to}}
+        <h4>To : {{to}}</h4>
+        {{/if}}
+        {{#if no}}
+        <h4>Bus no : {{no}}</h4>
+        {{/if}}
+        {{#if m}}
+        <h4>Bus time : {{m}}</h4>
+        {{/if}}
+        {{#if mail}}
+        <h4>Email : {{mail}}</h4>
+        {{/if}}
+       <br>
+       <label for="number">
+        Phone number
+        <input type="number" name="number" id="number">
+       </label><br><br>
+       <label for="tickets">NO OF TICKETS
+        <input type="number" name="tickets" id="number">
+       </label><br><br>
+       <div id="show" style="display:none">
+        <label for="debitcardno"  >Debit Card number
+            <input type="number" name="debitcardno" id="number">
+        </label><br>
+        <br>
+        <label for="cvv">CVV
+            <input type="number" name="cvv" id="number">
+        </label><br>
+        <br>
+        <label for="Expdate">Exp Date
+            <input type="text" name="Expdate" id="text">
+           </label><br>
+           <br>
+       </div>
+       <label for="OTP" id="show1" style="display:none">OTP
+        <input type="number" name="OTP" id="number">
+       </label><br>
+       <br>
+       <button type="button" onclick="card()" id="button1" style="margin-left: 350px;">continue</button>
+       <button type="button" onclick="card1()" id="button2" style="display:none;margin-left: 350px;">continue</button>
+       <button type="submit" id="button3"  style="display:none;background-color:black;margin-left: 350px;color:aliceblue" >Pay
+       </button>
+        </form>
+    </div>
+    <script>
+        function card(){
+            document.getElementById('show').style.display='block';
+            document.getElementById('button2').style.display='block';
+            document.getElementById('button1').style.display='none';
+        }
+        function card1(){
+            document.getElementById('show1').style.display='block';
+            document.getElementById('button2').style.display='none';
+            document.getElementById('button3').style.display='block';
+        }
+    </script>
+</body>
+</html>

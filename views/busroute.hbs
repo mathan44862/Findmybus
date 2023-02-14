@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BusRoute</title>
+    <style>
+        .right{
+            padding:150px;
+            width: 40%;
+            background-color:#ffd6ff;
+            margin-left: 175px;
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+        table, th, td {
+            border:1px solid black;
+          }
+    </style>
+</head>
+<body style="background-color:#c8b6ff">
+    <div class="right">
+        <p>
+            {{#if title}}
+            <h3>Bus Name : {{title}}</h3><br>
+            {{/if}}
+            <table style="width:100%">
+                <tr>
+                  <th>Stop</th>
+                  <th>Time</th>
+                </tr>
+                {{#each wet}}
+                <tr>
+                  <th>{{this.route}}</th>
+                  <th>{{this.time}}</th>
+                </tr>
+                {{/each}}
+            </table>
+        </p>
+          <button style="background-color: black;"><a href="/" style="text-decoration: none;color:aliceblue;background-color:black">
+            Home</a></button>
+    </div>
+</body>
+</html>

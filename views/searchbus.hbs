@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find my Bus</title>
+    <style>
+        .right{
+            margin-top: 50px;
+            margin-left: 50px;
+            width: 15%;
+            border: 3px ;
+            padding: 30px;
+            border-radius: 15px;
+            background-color:#ffd6ff;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            margin-right: 150px;
+        }
+        .right2{
+            padding: 30px;
+            background-color:#ffd6ff;
+            width: 75%;
+            margin-top: 25px;
+            border-radius: 15px;
+            padding-top: 10px;
+            margin-left: 50px;
+        }
+        table, th, td {
+            border:1px solid black;
+          }
+    </style>
+</head>
+<body style="background-color:#c8b6ff">
+    <div>
+        <div class="right" style="align-items: center;">
+            <h4>
+                {{#if from}}
+                <h4>FROM : {{from}}</h4>
+                {{/if}}
+            </h4>
+            <h4>
+                {{#if to}}
+                <h4>TO : {{to}}</h4>
+                {{/if}}
+            </h4>
+        </div><br>
+        <div class="right2" style="float:left">
+            <h3>For your search</h3>
+            <table style="width:100%">
+                <tr>
+                  <th>Name</th>
+                  <th>Time</th>
+                  <th>Direction</th>
+                  <th>Booking</th>
+                </tr>
+                {{#each c}}
+                <tr>
+                  <th>{{this.no}}</th>
+                  <th>{{this.time}}</th>
+                  <th><a href="/busroute/{{this.no}}" style="text-decoration: none;background-color:aliceblue;color:black">Route</a></th>
+                  <th><a href="/bookticket/{{this.no}}/{{this.time}}" style="text-decoration: none;background-color:aliceblue;color:black">Book Ticket</a></th>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
